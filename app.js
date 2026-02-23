@@ -94,7 +94,7 @@ function addAttendee() {
     <label class="label">Tipo</label>
     <select class="field attendee-type">
       <option value="Adulto">Adulto</option>
-      <option value="Crianca">Crianca</option>
+      <option value="Crianca">Criança</option>
     </select>
     <div class="attendee-actions">
       <button type="button" class="btn btn-danger attendee-remove">Remover</button>
@@ -169,7 +169,7 @@ function validatePayload(payload) {
   }
   if (payload.willAttend === "Sim" && payload.hasCompanions === "Sim") {
     const totalRows = el.attendees.querySelectorAll(".attendee").length;
-    if (totalRows === 0) return "Adicione ao menos um acompanhante ou selecione Nao.";
+    if (totalRows === 0) return "Adicione ao menos um acompanhante ou selecione Não.";
     if (payload.attendees.length !== totalRows) return "Preencha o nome de todos os acompanhantes.";
   }
   return "";
@@ -178,10 +178,10 @@ function validatePayload(payload) {
 function showSuccess(willAttend) {
   if (willAttend === "Sim") {
     el.successTitle.textContent = "Confirmado!";
-    el.successMessage.textContent = "Sua presenca foi confirmada. Te esperamos!";
+    el.successMessage.textContent = "Sua presença foi confirmada. Te esperamos! 💕";
   } else {
     el.successTitle.textContent = "Obrigado por avisar";
-    el.successMessage.textContent = "Registramos que voce nao podera comparecer.";
+    el.successMessage.textContent = "Registramos que você não poderá comparecer.";
   }
 
   el.form.classList.add("hidden");
