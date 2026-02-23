@@ -1,0 +1,261 @@
+:root {
+  --bg: #f8f2fb;
+  --card: #ffffff;
+  --text: #2a2240;
+  --muted: #655f75;
+  --line: #e8e2ef;
+  --primary-a: #6f4cff;
+  --primary-b: #e84bb6;
+  --danger: #c13540;
+  --success-bg: #edf8ef;
+  --success-text: #1f6b2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(780px 340px at 10% 0%, rgba(232, 75, 182, 0.12), transparent 65%),
+    radial-gradient(820px 360px at 90% 0%, rgba(111, 76, 255, 0.12), transparent 65%),
+    var(--bg);
+  padding: 14px 0 24px;
+}
+
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: min(92vw, 700px);
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(26, 18, 45, 0.11);
+  overflow: hidden;
+}
+
+.hero {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #f4eff8;
+}
+
+.header {
+  text-align: center;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(111, 76, 255, 0.1), rgba(232, 75, 182, 0.1));
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.8vw, 1.1rem);
+}
+
+.status {
+  margin: 14px 16px 0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.status.error {
+  background: #fff0f1;
+  color: #7e1b28;
+  border: 1px solid #efc7cc;
+}
+
+.status.info {
+  background: #eef4ff;
+  color: #264a94;
+  border: 1px solid #c4d5f4;
+}
+
+.status.success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid #c5e5c7;
+}
+
+.form {
+  padding: 16px;
+}
+
+.label {
+  display: block;
+  margin: 12px 0 6px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  min-height: 50px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: var(--text);
+  background: #fff;
+}
+
+.field:focus {
+  border-color: rgba(111, 76, 255, 0.8);
+  outline: 2px solid rgba(111, 76, 255, 0.18);
+}
+
+.field.error {
+  border-color: var(--danger);
+  outline-color: rgba(193, 53, 64, 0.2);
+}
+
+.help {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.row {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.row h2 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.stack {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.attendee {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  background: #fff;
+}
+
+.attendee-actions {
+  margin-top: 8px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  min-height: 50px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  width: 100%;
+  margin-top: 18px;
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary-a), var(--primary-b));
+}
+
+.btn-secondary {
+  min-height: 42px;
+  color: #3d2e99;
+  background: rgba(111, 76, 255, 0.12);
+  border: 1px solid rgba(111, 76, 255, 0.35);
+}
+
+.btn-danger {
+  width: 100%;
+  min-height: 42px;
+  color: #fff;
+  background: #bf304d;
+}
+
+.success {
+  padding: 24px 16px 26px;
+  text-align: center;
+}
+
+.success h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.success p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 430px) {
+  .card {
+    width: 92vw;
+  }
+
+  .header h1 {
+    font-size: clamp(1.7rem, 7.2vw, 2.1rem);
+  }
+
+  .header p {
+    font-size: clamp(1.02rem, 4.2vw, 1.25rem);
+  }
+
+  .label {
+    font-size: 1.08rem;
+  }
+
+  .field {
+    min-height: 58px;
+    font-size: 1.14rem;
+    padding: 14px 15px;
+  }
+
+  .help {
+    font-size: 0.98rem;
+  }
+
+  .btn-primary {
+    min-height: 58px;
+    font-size: 1.08rem;
+  }
+
+  .btn-secondary,
+  .btn-danger {
+    min-height: 48px;
+    font-size: 1rem;
+  }
+}
