@@ -101,10 +101,14 @@ function addAttendee() {
     </div>
   `;
 
-  const removeBtn = item.querySelector(".attendee-remove");
-  removeBtn.addEventListener("click", () => item.remove());
-
   const nameInput = item.querySelector(".attendee-name");
+  const removeBtn = item.querySelector(".attendee-remove");
+  removeBtn.addEventListener("click", () => {
+    const companionName = nameInput.value.trim();
+    const companionLabel = companionName || "sem nome";
+    const shouldRemove = window.confirm(`Tem certeza que gostaria de remover acompanhante "${companionLabel}"?`);
+    if (shouldRemove) item.remove();
+  });
   nameInput.addEventListener("input", () => nameInput.classList.remove("error"));
 
   el.attendees.appendChild(item);
@@ -187,6 +191,7 @@ function showSuccess(willAttend) {
   el.form.classList.add("hidden");
   setStatus("");
   el.successView.classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 async function submitWithPost(apiUrl, payload) {
