@@ -3,7 +3,7 @@ const CONFIG = {
   // Example: https://script.google.com/macros/s/AKfycb.../exec
   apiUrl: "https://script.google.com/macros/s/AKfycbwUo32MUCTm-2n0iNTcUSZ9Uz1maumW83dZx38yUmh7xFKI1EsLiOjdbJK_g037pTgsaA/exec",
   apiTransport: "jsonp", // "jsonp" (recommended for GitHub Pages) or "post"
-  heroImageUrl: "https://lh3.googleusercontent.com/pw/AP1GczN9wtACqhMA4FUcWWQahz0MbDEZnZJRrOevmn1XX929KJXOY9Dm5Y-vwE5ipAWX-5YPit0MFxLaSPqySb8E0Ek0Xy6pM3ESQccWiYun_quDDzm7FEi2dTZdYaZ1uyBpYBwZBuT3H2ZNZPaGuLj_WlL_fw=w1200"
+  heroImageUrl: "./cha_fraldas_laura.png"
 };
 
 const el = {
